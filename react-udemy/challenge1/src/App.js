@@ -1,25 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
+import UserInput from './components/UserInput';
+import UserOutput from './components/UserOutput';
+import React, { Component } from 'react';
+class App extends Component {
+	state = {
+		username: 'supermax'
+	}
+	render() {
+		return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserInput />
+      <UserOutput userName={this.state.username}/>
+      <UserOutput userName="Billy"/>
     </div>
-  );
+  	);
+	}
 }
 
 export default App;
